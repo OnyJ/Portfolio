@@ -1,5 +1,5 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.scss'
+import Head from "next/head";
+import styles from "../styles/Home.module.scss";
 
 export default function Home() {
   return (
@@ -10,9 +10,7 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Josselin Julien
-        </h1>
+        <h1 className={styles.title}>Josselin Julien</h1>
 
         <div className={styles.description}>
           <p>Développeur web fullstack</p>
@@ -20,5 +18,5 @@ export default function Home() {
         </div>
       </main>
     </div>
-  )
+  );
 }
