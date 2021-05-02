@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 
 function MyApp({ Component, pageProps }) {
   const [language, setLanguage] = useState("fr");
+
   const changeLanguage = () => {
     language === "fr" ? setLanguage("en") : setLanguage("fr");
   };
@@ -12,6 +13,7 @@ function MyApp({ Component, pageProps }) {
     const storageLanguage = localStorage.getItem("lang");
     setLanguage(storageLanguage);
   }, []);
+
   useEffect(() => {
     localStorage.setItem("lang", language);
   }, [language]);
