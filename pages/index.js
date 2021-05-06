@@ -2,7 +2,7 @@ import React from "react";
 import Head from "next/head";
 import styles from "../styles/Home.module.scss";
 
-export default function Home({ language }) {
+export default function Home({ text, language }) {
   return (
     <div className={styles.container}>
       <Head>
@@ -13,7 +13,7 @@ export default function Home({ language }) {
       <main className={styles.main}>
         <h1 className={styles.title}>Josselin Julien</h1>
         <div className={styles.description}>
-          <p>Développeur web fullstack</p>
+          <p>{text.home_subtitle}</p>
           <p>Ruby on Rails | React.js | Next.js | Node.js</p>
           <p>{language}</p>
         </div>

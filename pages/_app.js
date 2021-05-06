@@ -1,17 +1,26 @@
 import "../styles/globals.scss";
 import Navbar from "../components/Navbar";
 import { useEffect, useState } from "react";
+import { fr, en } from "../lib/text";
 
 function MyApp({ Component, pageProps }) {
   const [language, setLanguage] = useState("fr");
+  const [text, setText] = useState(fr);
 
-  const changeLanguage = () => {
+  const getLanguageFromLocalStorage = () => {
+    return localStorage.getItem("lang");
+  };
+  const changeLanguage = async () => {
     language === "fr" ? setLanguage("en") : setLanguage("fr");
+    language === "fr" ? await setText(en) : await setText(fr);
   };
 
-  useEffect(() => {
-    const storageLanguage = localStorage.getItem("lang");
-    setLanguage(storageLanguage);
+  useEffect(async () => {
+    const storageLanguage = getLanguageFromLocalStorage();
+    storageLanguage === undefined
+      ? setLanguage("fr")
+      : setLanguage(storageLanguage);
+    storageLanguage === "fr" ? await setText(fr) : await setText(en);
   }, []);
 
   useEffect(() => {
@@ -21,7 +30,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Navbar changeLanguage={changeLanguage} language={language} />
-      <Component {...pageProps} language={language} />
+      <Component {...pageProps} text={text} language={language} />
     </>
   );
 }
