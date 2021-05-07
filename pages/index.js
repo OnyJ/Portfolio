@@ -3,6 +3,7 @@ import Head from "next/head";
 import styles from "styles/Home.module.scss";
 import { useTextContext } from "components/TextContext";
 import TextSlider from "components/Home/TextSlider";
+import NavButtons from "components/Home/NavButtons";
 
 export default function Home() {
   const textProps = useTextContext();
@@ -20,7 +21,7 @@ export default function Home() {
         <div className={styles.description}>
           <p>{text.home_subtitle}</p>
           <TextSlider />
-          <p>{textProps.language}</p>
+          <NavButtons />
         </div>
       </main>
     </div>
