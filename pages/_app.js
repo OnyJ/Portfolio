@@ -17,10 +17,15 @@ function MyApp({ Component, pageProps }) {
 
   useEffect(async () => {
     const storageLanguage = getLanguageFromLocalStorage();
-    storageLanguage === undefined
-      ? setLanguage("fr")
-      : setLanguage(storageLanguage);
-    storageLanguage === "fr" ? await setText(fr) : await setText(en);
+    if (storageLanguage === undefined || storageLanguage === null) {
+      setLanguage("fr");
+      await setText(fr);
+    } else {
+      setLanguage(storageLanguage);
+      storageLanguage === "fr"
+        ? await setText(fr)
+        : await setText(en);
+    }
   }, []);
 
   useEffect(() => {
