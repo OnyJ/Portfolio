@@ -6,7 +6,7 @@ export default function Navbar() {
 
   return (
     <div className={styles.navbar}>
-      <span>Développeur depuis 2017</span>
+      <span>{textProps.text.nav_catch_phrase}</span>
       <button onClick={() => textProps.changeLanguage()}>
         {textProps.language}
       </button>
