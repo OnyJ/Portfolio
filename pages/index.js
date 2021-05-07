@@ -1,8 +1,12 @@
 import React from "react";
 import Head from "next/head";
 import styles from "../styles/Home.module.scss";
+import { useTextContext } from "../components/TextContext";
 
-export default function Home({ text, language }) {
+export default function Home() {
+  const textProps = useTextContext();
+  const text = textProps.text;
+
   return (
     <div className={styles.container}>
       <Head>
@@ -15,7 +19,7 @@ export default function Home({ text, language }) {
         <div className={styles.description}>
           <p>{text.home_subtitle}</p>
           <p>Ruby on Rails | React.js | Next.js | Node.js</p>
-          <p>{language}</p>
+          <p>{textProps.language}</p>
         </div>
       </main>
     </div>
