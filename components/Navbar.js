@@ -1,5 +1,5 @@
-import styles from "../styles/Navbar.module.scss";
-import { useTextContext } from "../components/TextContext";
+import styles from "styles/Navbar.module.scss";
+import { useTextContext } from "components/TextContext";
 
 export default function Navbar() {
   const textProps = useTextContext();

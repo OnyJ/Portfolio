@@ -1,6 +1,6 @@
-import "../styles/globals.scss";
-import Navbar from "../components/Navbar";
-import { TextContextProvider } from "../components/TextContext";
+import "styles/globals.scss";
+import Navbar from "components/Navbar";
+import { TextContextProvider } from "components/TextContext";
 
 function MyApp({ Component, pageProps }) {
   return (
