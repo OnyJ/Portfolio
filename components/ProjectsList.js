@@ -1,13 +1,12 @@
 import { useTextContext } from "components/TextContext";
 
-export default function NavButtons() {
+export default function ProjectsList() {
   const textProps = useTextContext();
   const text = textProps.text;
 
   return (
     <div>
-      <button>{text.home_btn_projects}</button>
-      <button>{text.home_btn_contact}</button>
+      <h2>{text.projects_title}</h2>
     </div>
   );
 }
