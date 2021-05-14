@@ -1,4 +1,5 @@
 import { useTextContext } from "components/TextContext";
+import ProjectDisplay from "components/ProjectDisplay";
 
 export default function ProjectsList() {
   const textProps = useTextContext();
@@ -7,6 +8,9 @@ export default function ProjectsList() {
   return (
     <div>
       <h2>{text.projects_title}</h2>
+      <div>
+        <ProjectDisplay />
+      </div>
     </div>
   );
 }
