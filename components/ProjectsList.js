@@ -8,8 +8,8 @@ export default function ProjectsList({ allProjectsData }) {
     <div>
       <h2>{text.projects_title}</h2>
       <div>
-        {allProjectsData.map((projectData) => (
-          <ProjectDisplay projectData={projectData} />
+        {allProjectsData.map((projectData, key) => (
+          <ProjectDisplay key={key} projectData={projectData} />
         ))}
       </div>
     </div>
