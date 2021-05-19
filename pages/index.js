@@ -4,8 +4,20 @@ import styles from "styles/Home.module.scss";
 import { useTextContext } from "components/TextContext";
 import TextSlider from "components/Home/TextSlider";
 import ProjectsList from "components/ProjectsList";
+import { getAllProjectsData } from "../lib/projectsFunctions";
+import fs from "fs";
 
-export default function Home() {
+export async function getStaticProps() {
+  const fileNames = await fs.readdirSync("projects");
+  const allProjectsData = getAllProjectsData(fileNames);
+  return {
+    props: {
+      allProjectsData,
+    },
+  };
+}
+
+export default function Home({ allProjectsData }) {
   const textProps = useTextContext();
   const text = textProps.text;
 
@@ -21,7 +33,18 @@ export default function Home() {
         <div className={styles.description}>
           <p>{text.home_subtitle}</p>
           <TextSlider />
-          <ProjectsList />
+          <ProjectsList allProjectsData={allProjectsData} />
+        </div>
+        <h1>AllProjectsData</h1>
+        <div>
+          {allProjectsData.map(({ id, name, date, title }) => (
+            <li>
+              <p>{id}</p>
+              <p>{name}</p>
+              <p>{title}</p>
+              <p>{date}</p>
+            </li>
+          ))}
         </div>
       </main>
     </div>
