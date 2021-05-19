@@ -1,7 +1,9 @@
-export default function ProjectDisplay({ data }) {
+export default function ProjectDisplay({ projectData }) {
   return (
     <div>
-      <div>project display</div>
+      <div>
+        <p>{projectData.name}</p>
+      </div>
     </div>
   );
 }
