@@ -1,5 +1,5 @@
 ---
-title: "kitten pixtore"
+title: "Kitten Pixtore"
 date: "2020-01-01"
 ---
 
