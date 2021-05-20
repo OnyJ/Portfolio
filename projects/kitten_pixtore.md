@@ -1,7 +1,7 @@
 ---
 title: "Kitten Pixtore"
 date: "2020-01-01"
-description: "Kitten Pixtore description"
+intro: "Kitten Pixtore intro"
 ---
 
 kitten pixtore text
