@@ -6,6 +6,7 @@ import { getAllProjectsData } from "../lib/projectsFunctions";
 import { useTextContext } from "components/TextContext";
 import TextSlider from "components/Home/TextSlider";
 import ProjectsList from "components/Project/ProjectsList";
+import ProjectModal from "components/Project/ProjectModal";
 
 export async function getStaticProps() {
   const fileNames = await fs.readdirSync("projects");
@@ -33,6 +34,7 @@ export default function Home({ allProjectsData }) {
         <div className={styles.description}>
           <p>{text.home_subtitle}</p>
           <TextSlider />
+          <ProjectModal />
           <ProjectsList allProjectsData={allProjectsData} />
         </div>
       </main>
