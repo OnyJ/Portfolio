@@ -1,5 +1,5 @@
 import { useTextContext } from "components/TextContext";
-import ProjectCard from "components/ProjectCard";
+import ProjectCard from "components/Project/ProjectCard";
 
 export default function ProjectsList({ allProjectsData }) {
   const textProps = useTextContext();
