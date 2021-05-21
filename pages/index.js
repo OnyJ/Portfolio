@@ -5,7 +5,7 @@ import styles from "styles/Home.module.scss";
 import { getAllProjectsData } from "../lib/projectsFunctions";
 import { useTextContext } from "components/TextContext";
 import TextSlider from "components/Home/TextSlider";
-import ProjectsList from "components/ProjectsList";
+import ProjectsList from "components/Project/ProjectsList";
 
 export async function getStaticProps() {
   const fileNames = await fs.readdirSync("projects");
