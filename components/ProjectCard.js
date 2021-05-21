@@ -1,4 +1,4 @@
-export default function ProjectDisplay({ projectData }) {
+export default function ProjectCard({ projectData }) {
   const { name, id, title, date, intro } = projectData;
 
   return (

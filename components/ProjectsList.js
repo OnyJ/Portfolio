@@ -1,5 +1,5 @@
 import { useTextContext } from "components/TextContext";
-import ProjectDisplay from "components/ProjectDisplay";
+import ProjectCard from "components/ProjectCard";
 
 export default function ProjectsList({ allProjectsData }) {
   const textProps = useTextContext();
@@ -9,7 +9,7 @@ export default function ProjectsList({ allProjectsData }) {
       <h2>{text.projects_title}</h2>
       <div>
         {allProjectsData.map((projectData, key) => (
-          <ProjectDisplay key={key} projectData={projectData} />
+          <ProjectCard key={key} projectData={projectData} />
         ))}
       </div>
     </div>
